@@ -1,0 +1,93 @@
+@import "compass";
+@import "normalize";
+@import "vars";
+@import "mixins/clearfix";
+@import "navigation";
+
+//Generall
+*{
+	@include box-sizing(border-box);
+}
+
+body{
+	font-family: pt-serif, times, serif;
+	//@include baseline-grid-background($grid-background-baseline-height, #f9f9f9);
+	background: url("http://noisepng.com/100-40-3-monochrome.png");
+	background-color: #f0eee7;
+	border: {
+		top: 4px solid black;
+		bottom: 4px solid black;
+	}
+	max-width: 90%;
+	@media screen and (min-width: 820px){
+		max-width: 80%;
+	}
+	@media screen and (min-width: 940px){
+		max-width: 70%;
+	}
+	margin: 0 auto;
+	color: $textcolor;
+}
+
+img{
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#{headings(all)}{
+	color: $headcolor;
+}
+
+//Mobile
+
+
+//Home
+
+.chooser{
+	@include margin-leader(3);
+	@include margin-trailer(2);
+	text-align: center;
+	a{
+		display: block;
+		width: 90%;
+			margin: 0 auto;
+		@media screen and (min-width: 440px){
+			width: 70%;
+		}
+		@media screen and (min-width: 550px){
+			display: inline-block;
+			width: 40%;
+		}
+		h2{
+			margin: $base-line-height/2 0;
+		}
+		img{
+			padding: 3px;
+			border: 1px solid $headcolor;
+		}
+		@include margin-trailer(1);
+	}
+}
+
+.description{
+	@include margin-trailer(1);
+	width: 60%;
+}
+
+//Footer
+footer{
+	@include margin-leader(2);
+	@include leading-border;
+	@include padding-leader(1);
+	@include margin-trailer(3);
+	div{
+		display: inline-block;
+		width: 33%;
+		padding-right:2%;
+	}
+}
+
+
+
+

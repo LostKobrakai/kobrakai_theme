@@ -1,0 +1,63 @@
+nav{
+	//Margins Vertical Grid
+	@include margin-leader(1);
+	@include padding-trailer(1);
+	@include trailing-border;
+	@include margin-trailer(1);
+
+	//Liststyling
+	ul{
+		padding:0; //Reset
+
+		//Vertical Grid
+		@include adjust-font-size-to(14px);
+		line-height: $base-line-height*2;
+
+
+		//Zweispalter um das Logo herum
+		@media screen and (max-width: 750px){
+			@include column-gap(.5em);
+			@include column-count(3);
+		}
+		//Horizontales Menü
+		@media screen and (min-width: 750px){
+			@include inline-block-list;
+			text-align: center;
+		}
+		//Mainly Mobile
+		li{
+			display: inline-block;
+			width: 100%;
+			@media screen and (min-width: 750px){
+				width: 70px;
+				margin: 0 $padding;
+			}
+			margin: 0;
+			list-style-type: none;
+			//Left Navi
+			&:nth-child(4n+1), &:nth-child(4n+2){
+				float: left;
+				text-align: left;
+				@media screen and (min-width: 750px){
+					float: none;
+					text-align: center;
+				}
+			}
+			//Right Navi
+			&:nth-child(4n+4), &:nth-child(4n+5){
+				float: right;
+				text-align: right;
+				@media screen and (min-width: 750px){
+					float: none;
+					text-align: center;
+				}
+			}
+			//Logo
+			&#middle{
+				margin-top: $base-line-height/2;
+				text-align: center;
+			}
+		}
+
+	}
+}

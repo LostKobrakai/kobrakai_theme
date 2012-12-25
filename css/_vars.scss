@@ -1,0 +1,12 @@
+//Typography
+$base-font-size: 16px;
+$base-line-height: 28px;
+@include establish-baseline;
+$padding: 28px;
+
+//Colors
+$white: #f3f3f3;
+$em: #ffffff;
+$black: #0f0f0f;
+$textcolor: #131313;
+$headcolor: #373737;
